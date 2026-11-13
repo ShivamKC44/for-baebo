@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff4f3">
+  <title>For Baebo ❤️</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+    :root { --ink:#49363b; --muted:#806b70; --rose:#c96f80; --deep:#9f5367; --paper:#fffaf8; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0; color:var(--ink); font-family:'DM Sans',sans-serif; overflow-x:hidden;
+      background:radial-gradient(circle at 12% 8%,#ffe5e8 0,transparent 30%),
+                 radial-gradient(circle at 90% 30%,#fce9dc 0,transparent 28%),
+                 linear-gradient(145deg,#fff8f5,#fff0f1 55%,#fff8f1);
+    }
+    .grain { position:fixed; inset:0; pointer-events:none; opacity:.12; z-index:0;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E"); }
+    .wrap { width:min(880px,92%); margin:auto; position:relative; z-index:1; }
+    header { min-height:100svh; display:grid; place-items:center; text-align:center; padding:70px 0 55px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.23em; color:var(--deep); font-size:.72rem; font-weight:700; }
+    h1,h2 { font-family:'Playfair Display',serif; font-weight:500; }
+    h1 { font-size:clamp(3.4rem,11vw,7.4rem); line-height:.98; margin:22px 0 18px; letter-spacing:-.055em; }
+    h1 span { color:var(--rose); font-style:italic; }
+    .intro { max-width:560px; margin:0 auto; color:var(--muted); line-height:1.85; font-size:clamp(1rem,2.8vw,1.12rem); }
+    .heart { display:inline-block; color:#cf7888; animation:beat 1.7s infinite; }
+    @keyframes beat { 0%,100%{transform:scale(1)} 12%{transform:scale(1.18)} 24%{transform:scale(1)} 36%{transform:scale(1.1)} }
+    .scroll { margin-top:48px; color:#987d83; font-size:.8rem; letter-spacing:.12em; }
+    .scroll b { display:block; font-size:1.4rem; margin-top:9px; animation:down 1.6s infinite; }
+    @keyframes down { 50%{transform:translateY(7px)} }
+    section { padding:78px 0; }
+    .card { background:rgba(255,252,250,.78); border:1px solid rgba(201,111,128,.18); border-radius:26px;
+      padding:clamp(25px,6vw,55px); box-shadow:0 18px 60px rgba(122,74,83,.08); backdrop-filter:blur(8px); }
+    .section-kicker { color:var(--rose); text-transform:uppercase; letter-spacing:.18em; font-size:.7rem; font-weight:700; }
+    h2 { font-size:clamp(2rem,6vw,3.5rem); line-height:1.12; margin:13px 0 25px; }
+    p { line-height:1.95; color:#705e63; font-size:1rem; }
+    .emphasis { color:#9e5268; font-family:'Playfair Display',serif; font-style:italic; font-size:1.35rem; line-height:1.55; }
+    .divider { text-align:center; color:#d18a98; letter-spacing:.55em; padding:28px 0; }
+    .promise-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:26px; }
+    .promise { padding:22px 17px; border-radius:18px; background:#fff1f0; text-align:center; }
+    .promise .symbol { font-size:1.5rem; }
+    .promise strong { display:block; margin:10px 0 6px; font-family:'Playfair Display',serif; font-size:1.15rem; font-weight:500; }
+    .promise small { color:var(--muted); line-height:1.6; display:block; }
+    .letter-area { text-align:center; }
+    .envelope-button { border:0; background:none; cursor:pointer; padding:12px; color:inherit; }
+    .envelope { width:min(290px,72vw); height:190px; position:relative; margin:20px auto 15px;
+      background:#eab6bd; border-radius:8px; box-shadow:0 18px 35px #a65e6b26; transition:transform .3s; }
+    .envelope-button:hover .envelope { transform:translateY(-5px) rotate(-1deg); }
+    .envelope:before { content:""; position:absolute; inset:0; background:#f5cbd0; clip-path:polygon(0 0,50% 58%,100% 0); z-index:3; transition:transform .7s; transform-origin:top; }
+    .envelope:after { content:""; position:absolute; inset:0; background:#df9da9; clip-path:polygon(0 100%,50% 48%,100% 100%); z-index:2; border-radius:0 0 8px 8px; }
+    .seal { position:absolute; z-index:4; left:50%; top:57%; transform:translate(-50%,-50%); width:43px;height:43px;border-radius:50%;background:#b45d72;color:white;display:grid;place-items:center;font-size:1.2rem; }
+    .letter { display:none; text-align:left; max-width:650px; margin:28px auto 0; background:#fffdf9; padding:clamp(25px,6vw,48px); border-radius:4px 22px 22px 22px; box-shadow:0 15px 45px #895d641c; border:1px solid #f2e4df; animation:appear .7s ease both; }
+    .letter.open { display:block; }
+    @keyframes appear { from{opacity:0;transform:translateY(15px)} to{opacity:1;transform:none} }
+    .letter p { color:#67565a; }
+    .sign { font-family:'Playfair Display',serif; font-size:1.45rem; color:#a85c70; font-style:italic; margin-top:28px; }
+    .final { text-align:center; padding-bottom:110px; }
+    .final h2 { max-width:700px; margin:15px auto; }
+    .final p { max-width:580px; margin:15px auto; }
+    .tiny { font-size:.82rem; color:#9a8589; }
+    footer { text-align:center; padding:0 20px 35px; color:#a48d91; font-size:.75rem; }
+    .float { position:fixed; bottom:-30px; color:#d98b9a; opacity:0; pointer-events:none; animation:floatUp 8s linear infinite; z-index:0; }
+    @keyframes floatUp { 0%{transform:translateY(0) rotate(0);opacity:0} 15%{opacity:.45} 85%{opacity:.35} 100%{transform:translateY(-110vh) rotate(35deg);opacity:0} }
+    button:focus-visible { outline:3px solid #a6536b; outline-offset:5px; border-radius:12px; }
+    @media(max-width:620px) { .promise-grid{grid-template-columns:1fr;gap:10px} .promise{display:flex;align-items:center;text-align:left;gap:14px;padding:16px} .promise .symbol{min-width:30px} .promise strong{margin:0 0 3px} section{padding:48px 0} header{padding-top:50px} }
+    @media(prefers-reduced-motion:reduce) { *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important} }
+  </style>
+</head>
+<body>
+  <div class="grain"></div>
+  <main>
+    <header class="wrap">
+      <div>
+        <div class="eyebrow">A little page, from my heart</div>
+        <h1>For you,<br><span>Baebo.</span> <i class="heart">♥</i></h1>
+        <p class="intro">I know a webpage cannot undo hurt, and pretty words cannot rebuild trust. But I wanted to make a quiet little space where I could say what I should have said properly, and take responsibility for what I did.</p>
+        <div class="scroll">TAKE YOUR TIME <b>↓</b></div>
+      </div>
+    </header>
+
+    <section class="wrap">
+      <article class="card">
+        <div class="section-kicker">What I need to own</div>
+        <h2>I should have listened to understand, not listened to defend myself.</h2>
+        <p>Baebo, I am truly sorry for making you feel wrong when you were trying to tell me that something had hurt you. Instead of pausing, listening, and acknowledging your feelings, I became defensive. I shifted the blame and focused on explaining myself.</p>
+        <p>That was unfair to you. Even if I had my own perspective, it did not cancel out your experience. You deserved to feel heard and understood—not to have to prove why you were hurt.</p>
+        <p>I also know I haven't given you the time, attention, and emotional support you needed from me. I can imagine how lonely and disappointing that may have felt, especially when you were expecting me to be someone you could lean on.</p>
+        <p class="emphasis">I am sorry not only for the moments that hurt you, but also for the way I responded when you tried to tell me about that hurt.</p>
+      </article>
+      <div class="divider">✦ &nbsp; ♥ &nbsp; ✦</div>
+      <article class="card">
+        <div class="section-kicker">About the trust I may have damaged</div>
+        <h2>I understand that “trust me” is not enough.</h2>
+        <p>I don't want to assume that everything is okay just because I have apologised. I understand that my actions may have made you question whether I will really show up for you, make time for you, and take your feelings seriously.</p>
+        <p>I cannot ask you to forget what happened, rush your feelings, or trust me just because I want things to be okay again. If trust has been shaken, I have to accept that—and do the patient work of earning it back.</p>
+        <p>And I don't want to make promises just to make this moment easier. I want to become more thoughtful in the ordinary moments too: listening without interrupting, making time instead of leaving you to ask, checking in, and being emotionally present.</p>
+      </article>
+    </section>
+
+    <section class="wrap">
+      <article class="card">
+        <div class="section-kicker">What I want to do differently</div>
+        <h2>Less defending. More understanding.</h2>
+        <div class="promise-grid">
+          <div class="promise"><div class="symbol">♡</div><div><strong>Listen first</strong><small>Let you finish, understand what you feel, and acknowledge it before I explain my side.</small></div></div>
+          <div class="promise"><div class="symbol">☁</div><div><strong>Be present</strong><small>Make intentional time for you and offer support instead of assuming you'll be okay.</small></div></div>
+          <div class="promise"><div class="symbol">✧</div><div><strong>Show it consistently</strong><small>Let changed behaviour—not one emotional message—speak over time.</small></div></div>
+        </div>
+        <p class="tiny" style="margin-top:25px">These aren't conditions for you to forgive me. They're responsibilities I should have been taking seriously already.</p>
+      </article>
+    </section>
+
+    <section class="wrap letter-area">
+      <div class="section-kicker">A letter, just for you</div>
+      <h2>There is something I want you to read.</h2>
+      <p class="intro">Whenever you're ready, tap the envelope. No rush. ❤️</p>
+      <button class="envelope-button" id="openLetter" aria-expanded="false" aria-controls="letter">
+        <div class="envelope"><div class="seal">♥</div></div>
+        <span class="tiny" id="envelopeHint">Tap to open your letter</span>
+      </button>
+      <article class="letter" id="letter">
+        <div class="section-kicker">Dear Baebo,</div>
+        <p>I wish I had handled things differently when you needed me. I wish I had put my need to defend myself aside and made sure you knew that your feelings mattered to me.</p>
+        <p>You shouldn't have to fight to be heard by someone who says he cares about you. You shouldn't have to keep asking for time, reassurance, or emotional support. I am sorry that my actions made you feel otherwise.</p>
+        <p>I love the place you hold in my life, but I know saying that means very little if my actions don't make you feel valued. I want to do better—not for a day, not only while things feel difficult, but consistently.</p>
+        <p>You don't owe me an immediate reply, forgiveness, or reassurance. Take the time you need. If and when you're ready, I want to listen properly, without interrupting, arguing, or turning it back on you. I want to understand what this has been like for you.</p>
+        <p class="emphasis">I'm sorry, Baebo. You deserved more care from me, and I want my actions to show you that I understand.</p>
+        <div class="sign">With love, and with accountability. ❤️</div>
+      </article>
+    </section>
+
+    <section class="wrap final">
+      <div class="divider">♡</div>
+      <div class="eyebrow">One last thing</div>
+      <h2>You don't have to make this easier for me.</h2>
+      <p>Your feelings are allowed to take up space. I am not asking you to pretend it didn't hurt. I just hope, with time and consistent effort, I can show you that I have genuinely heard you.</p>
+      <p class="emphasis">I'm sorry, my Baebo. ❤️</p>
+      <p class="tiny">Whenever you're ready, I'm here to listen.</p>
+    </section>
+  </main>
+  <footer>Made with care, and a promise to do better. ♡</footer>
+  <script>
+    const button = document.getElementById('openLetter');
+    const letter = document.getElementById('letter');
+    const hint = document.getElementById('envelopeHint');
+    button.addEventListener('click', () => {
+      const opened = letter.classList.toggle('open');
+      button.setAttribute('aria-expanded', String(opened));
+      hint.textContent = opened ? 'Your letter is open' : 'Tap to open your letter';
+      if (opened) setTimeout(() => letter.scrollIntoView({behavior:'smooth', block:'center'}), 80);
+    });
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduceMotion) {
+      const symbols = ['♡','♥','✧'];
+      for (let i=0; i<12; i++) {
+        const el = document.createElement('span');
+        el.className = 'float';
+        el.textContent = symbols[i % symbols.length];
+        el.style.left = (Math.random()*100)+'%';
+        el.style.animationDelay = (Math.random()*8)+'s';
+        el.style.animationDuration = (7+Math.random()*6)+'s';
+        el.style.fontSize = (12+Math.random()*15)+'px';
+        document.body.appendChild(el);
+      }
+    }
+  </script>
+</body>
+</html>
